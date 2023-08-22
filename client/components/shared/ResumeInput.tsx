@@ -59,11 +59,11 @@ const ResumeInput: React.FC<Props> = ({ type = 'text', label, path, className, m
         openTo="year"
         label={label}
         className={className}
-        views={['year', 'month', 'day']}
+        views={['year']}
         value={isEmpty(value) ? null : dayjs(value)}
         onChange={(date: dayjs.Dayjs | null) => {
           if (!date) return onChangeValue('');
-          if (dayjs(date).isValid()) return onChangeValue(dayjs(date).format('YYYY-MM-DD'));
+          if (dayjs(date).isValid()) return onChangeValue(dayjs(date).format('YYYY'));
         }}
       />
     );
